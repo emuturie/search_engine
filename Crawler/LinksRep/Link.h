@@ -1,8 +1,13 @@
 #ifndef LINK
 #define LINK
 
-#include "LinkStatus.h"
 #include <string>
+
+enum class LinkStatus {
+  WAITING,
+  ERROR,
+  SUCCESS
+};
 
 class Link 
 {

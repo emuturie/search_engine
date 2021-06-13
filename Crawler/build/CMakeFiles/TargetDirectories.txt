@@ -1,0 +1,15 @@
+/home/emilia/search_engine/Crawler/build/CMakeFiles/rebuild_cache.dir
+/home/emilia/search_engine/Crawler/build/CMakeFiles/edit_cache.dir
+/home/emilia/search_engine/Crawler/build/CMakeFiles/Crawler.dir
+/home/emilia/search_engine/Crawler/build/Loader/CMakeFiles/rebuild_cache.dir
+/home/emilia/search_engine/Crawler/build/Loader/CMakeFiles/edit_cache.dir
+/home/emilia/search_engine/Crawler/build/Loader/CMakeFiles/Loader.dir
+/home/emilia/search_engine/Crawler/build/Parser/CMakeFiles/rebuild_cache.dir
+/home/emilia/search_engine/Crawler/build/Parser/CMakeFiles/edit_cache.dir
+/home/emilia/search_engine/Crawler/build/Parser/CMakeFiles/Parser.dir
+/home/emilia/search_engine/Crawler/build/LinksRep/CMakeFiles/rebuild_cache.dir
+/home/emilia/search_engine/Crawler/build/LinksRep/CMakeFiles/edit_cache.dir
+/home/emilia/search_engine/Crawler/build/LinksRep/CMakeFiles/LinkRepository.dir
+/home/emilia/search_engine/Crawler/build/Website/CMakeFiles/rebuild_cache.dir
+/home/emilia/search_engine/Crawler/build/Website/CMakeFiles/edit_cache.dir
+/home/emilia/search_engine/Crawler/build/Website/CMakeFiles/Website.dir

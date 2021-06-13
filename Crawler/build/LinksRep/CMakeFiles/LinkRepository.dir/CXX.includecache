@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/emilia/search_engine/Crawler/LinksRep/Link.cpp
+Link.h
+/home/emilia/search_engine/Crawler/LinksRep/Link.h
+
+/home/emilia/search_engine/Crawler/LinksRep/Link.h
+string
+-
+
+/home/emilia/search_engine/Crawler/LinksRep/LinkRepository.cpp
+LinkRepository.h
+/home/emilia/search_engine/Crawler/LinksRep/LinkRepository.h
+iostream
+-
+
+/home/emilia/search_engine/Crawler/LinksRep/LinkRepository.h
+Link.h
+/home/emilia/search_engine/Crawler/LinksRep/Link.h
+vector
+-
+optional
+-
+

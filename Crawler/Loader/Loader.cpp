@@ -1,6 +1,7 @@
 #include "Loader.h"
 
 Loader::Loader()
+    : html{}, code{}
 {
 }
 
@@ -32,14 +33,14 @@ Loader Loader::loadHtml(const std::string& url)
 
     curl_easy_setopt(curl,CURLOPT_URL, url.c_str());
     curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1);
-    curl_easy_setopt(curl, CURLOPT_MAXREDIRS, 4);
+    curl_easy_setopt(curl, CURLOPT_MAXREDIRS, 1);
     curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, writeFunction);
     curl_easy_setopt(curl, CURLOPT_WRITEDATA, (void*)html);
 
     result = curl_easy_perform(curl); //400 300 200
     if(result != CURLE_OK || result == CURLE_TOO_MANY_REDIRECTS)
     {
-        std::cout << "perform problem\n";
+        std::cout << "Error\n";
         return Loader();
     }
 

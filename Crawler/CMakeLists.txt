@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.0)
 
-project("Crawler")
+project(Crawler)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 17) #c++17
 
 add_executable(${PROJECT_NAME} main.cpp)
 

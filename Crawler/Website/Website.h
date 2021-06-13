@@ -1,3 +1,6 @@
+#ifndef WEBSITE
+#define WEBSITE
+
 #include <string>
 
 class Website 
@@ -12,3 +15,5 @@ public:
   std::string getDomain();
   std::string getHomepage();
 };
+
+#endif

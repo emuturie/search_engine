@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/emilia/search_engine/Crawler/Parser/Parser.cpp
+Parser.h
+/home/emilia/search_engine/Crawler/Parser/Parser.h
+iostream
+-
+
+/home/emilia/search_engine/Crawler/Parser/Parser.h
+gumbo.h
+/home/emilia/search_engine/Crawler/Parser/gumbo.h
+vector
+-
+string
+-
+

@@ -7,4 +7,4 @@ add_library(
     Parser.cpp
 )
 
-target_link_libraries(Parser -lgumbo)
+target_link_libraries(Parser -lgumbo  -lboost_regex)

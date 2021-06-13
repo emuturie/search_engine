@@ -2,39 +2,10 @@
 #include <string>
 #include <vector>
 
-#include <curl/curl.h>
-#include "gumbo.h"
-
 #include "Loader/Loader.h"
 #include "Website/Website.h"
 #include "LinksRep/LinkRepository.h"
 #include "Parser/Parser.h"
-
-void extract_new_links(GumboNode* node) 
-{
-    if (node->type != GUMBO_NODE_ELEMENT) 
-    {
-        std::cout << "not element\n";
-        return;
-    }
-
-    GumboAttribute* href;
-    if (node->v.element.tag == GUMBO_TAG_A && (href = gumbo_get_attribute(&node->v.element.attributes, "href"))) 
-    {
-        std::string temp = std::string(href->value);
-        if(temp.size() > 0)
-        {
-            std::cout << "download link: " << href->value << std::endl;  // to print all links from current page
-        }      
-    }
-
-    GumboVector* children = &node->v.element.children;
-
-    for (unsigned int i = 0; i < children->length; ++i) 
-    {
-        extract_new_links(static_cast<GumboNode*>(children->data[i]));
-    }
-}
 
 int main() 
 {
@@ -43,10 +14,20 @@ int main()
   Loader loader;
   Parser parse;
 
-  websites.push_back(Website("rau.am", "https://rau.am/"));
-
+  //websites.push_back(Website("ru.wikipedia.org", "https://ru.wikipedia.org/wiki/SCP_Foundation"));
+  websites.push_back(Website("noexisting.org", "https://noexisting.org"));
   for(auto& website : websites)
   {
+    Loader loadd = loader.loadHtml(website.getHomepage());
+
+        long status = loadd.getCode();
+        if(status < 200 || status >= 300)
+        {
+
+          std::cout << "website doesnt exist\n";
+           continue;
+        }
+
     linkrep.saveLink(Link(website.getHomepage(), website.getDomain(), LinkStatus::WAITING));
 
     while(true)
@@ -72,6 +53,8 @@ int main()
         long status = load.getCode();
         if(status < 200 || status >= 300)
         {
+
+          std::cout << "Skiping the link";
            continue;
         }
 
@@ -86,6 +69,7 @@ int main()
         // std::cout << "exLinksSize: " << extractedLinks.size() << "\n";
 
         std::cout << "size: " << linkrep.getSize() << "\n";
+
         for(const auto& newLink : extractedLinks)
         {
           if(linkrep.getByUrl(newLink).has_value())
@@ -94,9 +78,9 @@ int main()
             // std::cout << "already exists current link\n";
             continue;
           }
-
-          std::cout << "newLink: " << newLink << "\n";
+          
           linkrep.saveLink( Link(newLink, website.getDomain(), LinkStatus::WAITING) );
+          std::cout << "newLink: " << newLink << "\n";
         }
 
         linkrep.saveLink(Link(link.getUrl(), link.getDomain(), LinkStatus::SUCCESS));
