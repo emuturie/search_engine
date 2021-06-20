@@ -6,11 +6,6 @@ set(CMAKE_CXX_STANDARD 17) #c++17
 
 add_executable(${PROJECT_NAME} main.cpp)
 
-include_directories(Loader)
-include_directories(Parser)
-include_directories(LinksRep)
-include_directories(Website)
-
 add_subdirectory(Loader)
 add_subdirectory(Parser)
 add_subdirectory(LinksRep)
